@@ -7,7 +7,7 @@ const Course = () => {
             .then(res => res.json())
             .then(data => setCourse(data));
     }, []);
-    console.log(courses);
+   
     return (
 <div className='my-10'>
             <h4 className='text-xl text-secondary text-center my-12'>Available Courses </h4>

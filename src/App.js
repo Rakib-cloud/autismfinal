@@ -10,6 +10,7 @@ import Login from './Pages/Login/Login';
 import Contact from './Pages/Contact/Contact';
 import Signup from './Pages/Login/Signup';
 import RequireAuth from './Pages/Login/RequireAuth';
+import Purchasedetails from './Pages/Course/Purchasedetails';
 
 
 
@@ -23,6 +24,9 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="allcourse" element={ <RequireAuth>
           <Course></Course>
+          </RequireAuth>} />
+          <Route path="Purchase/:_id" element={<RequireAuth>
+          <Purchasedetails></Purchasedetails>
           </RequireAuth>} />
         <Route path="blog" element={<Blog></Blog>} />
         <Route path="contact" element={<Contact></Contact>} />
