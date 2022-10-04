@@ -12,7 +12,7 @@ const Coursedetails = ({ tool }) => {
             <p class=" font-bold text-secondary">Course Duration:{courseDuration}</p>
             <p class=" font-bold text-secondary">Course Details :{courseDetails}</p>
             <p class=" font-bold text-secondary">price :{coursePrice}</p>
-            <Link to={`/purchase/${_id}`} className="btn btn-primary" >Purchuse</Link>
+            <Link to={`/purchase/${_id}`} className="btn btn-accent" >Purchuse</Link>
            
         </div>
     </div>

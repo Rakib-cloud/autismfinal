@@ -11,7 +11,7 @@ import Contact from './Pages/Contact/Contact';
 import Signup from './Pages/Login/Signup';
 import RequireAuth from './Pages/Login/RequireAuth';
 import Purchasedetails from './Pages/Course/Purchasedetails';
-
+import Comments from './comments/Comments';
 
 
 function App() {
@@ -29,6 +29,8 @@ function App() {
           <Purchasedetails></Purchasedetails>
           </RequireAuth>} />
         <Route path="blog" element={<Blog></Blog>} />
+        <Route path="forum" element={<Comments commentsUrl="http://localhost:3004/comments"
+        currentUserId="1"></Comments>} />
         <Route path="contact" element={<Contact></Contact>} />
        
         <Route path="login" element={<Login></Login>} />

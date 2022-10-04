@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+
+
 const Purchasedetails = () => {
      const { _id } = useParams();
      
@@ -31,6 +33,7 @@ const Purchasedetails = () => {
                  
                
       </div>
+   
         </div>
     );
 };
