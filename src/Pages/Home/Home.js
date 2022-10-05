@@ -5,6 +5,7 @@ import Onlinecourse from '../Onlinecourse/Onlinecourse';
 import Stat from '../Stat/Stat';
 import Testimonial from '../Testimonial/Testimonial';
 import Slider from './Slider';
+import Faq from '../Faq/Faq';
 
 
 
@@ -16,6 +17,7 @@ const Home = () => {
            <Slider></Slider>
            <Stat></Stat>
            <Testimonial></Testimonial>
+           <Faq></Faq>
            <Footer></Footer>
            
         </div>

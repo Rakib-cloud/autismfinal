@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Video from '../Videoplaylist/Video';
 
 
 const Purchasedetails = () => {
@@ -15,8 +16,8 @@ const Purchasedetails = () => {
   }, [_id])
   
     return (
-        <div>
-            <div class="card w-1/2 bg-base-100 shadow-2xl">
+        <div >
+            <div class="card bg-base-100 shadow-2xl w-1/2  items-center ml-64" >
        
                  
                  <figure class="px-10 pt-10">
@@ -33,7 +34,9 @@ const Purchasedetails = () => {
                  
                
       </div>
-   
+               <div>
+                <Video></Video>
+               </div>
         </div>
     );
 };
