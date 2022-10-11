@@ -1,7 +1,7 @@
 import React from "react"
 import { blog } from "../../../dummydata"
 import "./footer.css"
-
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <>
@@ -20,17 +20,17 @@ const Footer = () => {
           <div className='box link'>
             <h3>Explore</h3>
             <ul>
-              <li>About Us</li>
-              <li>Services</li>
-              <li>Courses</li>
-              <li>Blog</li>
-              <li>Contact us</li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/forum">Forum</Link></li>
+              <li><Link to="/allcourse">All Course</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
           <div className='box link'>
             <h3>Quick Links</h3>
             <ul>
-              <li>Contact Us</li>
+              <li><Link to="/contact">Contact</Link></li>
               <li>Pricing</li>
               <li>Terms & Conditions</li>
               <li>Privacy</li>
