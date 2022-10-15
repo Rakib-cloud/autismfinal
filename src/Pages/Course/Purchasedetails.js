@@ -22,13 +22,13 @@ const Purchasedetails = () => {
   }, [_id]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user?.email}`)
+    fetch(`https://autism60089s.herokuapp.com/users/${user?.email}`)
       .then(res => res.json())
       .then(data => { setUserInfo(data); setUserCourses(data.courses); });
   }, [user?.email]);
 
   const purchased = userCourses.find(code => code === product.code);
-  console.log("🚀 ~ file: Purchasedetails.js ~ line 31 ~ Purchasedetails ~ purchased", purchased);
+ 
 
   return (
     <div >
