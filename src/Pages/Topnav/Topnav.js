@@ -1,5 +1,6 @@
 import React from 'react';
 import back from '../../autism.jpg';
+import { Link } from 'react-router-dom';
 const Topnav = () => {
  
     return (
@@ -16,7 +17,7 @@ const Topnav = () => {
       <p class="mb-5 text-xl font-bold">Best Online Autism care near you</p>
       <p class="mb-5">This platform that helps parents teach their autistic children daily activities at
 a lower cost.</p>
-      <button class="btn btn-primary">Get Started</button>
+<p> <Link className='px-6 py-3 text-blue-100 no-underline bg-blue-500 rounded hover:bg-blue-600 hover:underline hover:text-blue-200 ' to="/allcourse">Get Started</Link></p>
     </div>
   </div>
 </div>

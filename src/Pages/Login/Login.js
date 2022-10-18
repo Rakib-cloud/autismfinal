@@ -6,24 +6,26 @@ import auth from '../../firebase.init';
 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading/Loading';
-
+import { useAuthState } from 'react-firebase-hooks/auth';
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
         signInWithEmailAndPassword,
-        user,
+        // user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-
+    const [user] = useAuthState(auth);
+    console.log(user);
     let signInError;
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
  
 
-
+    console.log("🚀 ~ file: Login.js ~ line 47 ~ useEffect ~ user",user);
+    
     useEffect(() => {
 
         const saveData = (method, data) => {
@@ -39,28 +41,24 @@ const Login = () => {
                 .then(data => {
                     console.log("🚀 ~ file: Login.js ~ line 41 ~ useEffect ~ data", data);
                     navigate(from, { replace: true });
-
+    
                 });
         };
          
         if (user) {
-            // console.log("🚀 ~ file: Login.js ~ line 47 ~ useEffect ~ user",);
-            // axios.get(`http://localhost:5000/users/${user.email}`)
-            //     .then(res => {
-            //         console.log(res);
-            //         if (res.data.email === user.email) return;
-            //         const data = {
-            //             email: user.email,
-            //             courses: []
-            //         };
-            //         saveData('PUT', data);
-            //     });
+             console.log("🚀 ~ file: Login.js ~ line 47 ~ useEffect ~ user",user);
+            axios.get(`http://localhost:5000/users/${user.email}`)
+                .then(res => {
+                    console.log(res);
+                    if (res.data.email === user.email) return;
+                    const data = {
+                        email: user.email,
+                        courses: []
+                    };
+                    saveData('PUT', data);
+                });
 
-            const data = {
-                email: user.user.email,
-                courses: []
-            };
-            saveData('PUT', data);
+           
 
         }
 
@@ -83,6 +81,8 @@ const Login = () => {
         }
 
     }, [user, gUser, navigate, from]);
+
+   
 
     //work for email pass ueser 
 
@@ -167,7 +167,7 @@ const Login = () => {
                             </div>
 
                             {signInError}
-                            <input className='btn w-full max-w-xs text-white' type="submit" to="/" value="Login" >
+                            <input className='btn w-full max-w-xs text-white' type="submit"  value="Login" >
                               
 
                             </input>

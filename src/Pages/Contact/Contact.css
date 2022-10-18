@@ -251,7 +251,7 @@
     margin: 1rem 0;
   }
   
-  .input {
+  .inputx {
     width: 100%;
     outline: none;
     border: 2px solid #fafafa;
@@ -292,7 +292,7 @@
     transform: translateY(0);
   }
   
-  .btn {
+  .btnx {
     padding: 0.6rem 1.3rem;
     background-color: #fff;
     border: 2px solid #fafafa;
@@ -306,7 +306,7 @@
     margin: 0;
   }
   
-  .btn:hover {
+  .btnx:hover {
     background-color: transparent;
     color: green;
   }
@@ -533,11 +533,11 @@
       width: 23px;
     }
   
-    .input {
+    .inputx {
       padding: 0.45rem 1.2rem;
     }
   
-    .btn {
+    .btnx {
       padding: 0.45rem 1.2rem;
     }
   }
