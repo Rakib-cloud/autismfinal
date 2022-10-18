@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
-
+import './style.css';
+import ReactHlsPlayer from 'react-hls-player';
 
 const Purchasedetails = () => {
   const { _id } = useParams();
@@ -28,8 +29,23 @@ const Purchasedetails = () => {
   }, [user?.email]);
 
   const purchased = userCourses.find(code => code === product.code);
- 
 
+  //video function 
+
+  let videoList = document.querySelectorAll('.video-list-container .list');
+
+videoList.forEach(vid =>{
+   vid.onclick = () =>{
+      videoList.forEach(remove =>{remove.classList.remove('active')});
+      vid.classList.add('active');
+      let src = vid.querySelector('.list-video').src;
+      let title = vid.querySelector('.list-title').innerHTML;
+      document.querySelector('.main-video-container .main-video').src = src;
+      document.querySelector('.main-video-container .main-video').play();
+      document.querySelector('.main-video-container .main-vid-title').innerHTML = title;
+   };
+});
+  
   return (
     <div >
       <div class="card bg-base-100 shadow-2xl w-1/2  items-center ml-64" >
@@ -84,6 +100,92 @@ const Purchasedetails = () => {
                     <p>Course quiz link: {product.drive} </p>
                     <p>Course ppt link: {product.ppt}</p>
                     <p>Course video : {product.video}</p>
+                    <div>
+            <h3 className=' mt-20 font-bold text-center '>Lession Video player</h3>
+            {/* <div className='c '>
+            <ReactHlsPlayer
+    src={product.video}
+    autoPlay={false}
+    controls={true}
+    className="content-center"
+    // width="30%"
+    // height="50%"
+  />
+            </div> */}
+
+<div class="container">
+
+<div class="main-video-container">
+   
+   <ReactHlsPlayer
+    src={product.video}
+    autoPlay={false}
+    controls={true}
+    className="content-center"
+    loop controls class="main-video"
+    // width="30%"
+    // height="50%"
+  />
+   <h3 class="main-vid-title">Lesson1</h3>
+</div>
+
+<div class="video-list-container">
+
+   <div class="list active">
+   <ReactHlsPlayer
+    src={product.video}
+    autoPlay={false}
+    controls={true}
+    className="content-center list-video"
+    // width="30%"
+    // height="50%"
+  />
+      <h3 class="list-title">lesson1</h3>
+   </div>
+
+   <div class="list">
+   <ReactHlsPlayer
+    src={product.video}
+    autoPlay={false}
+    controls={true}
+    className="content-center list-video"
+    // width="30%"
+    // height="50%"
+  />
+      <h3 class="list-title">lesson2</h3>
+   </div>
+
+   <div class="list">
+   <ReactHlsPlayer
+    src={product.video}
+    autoPlay={false}
+    controls={true}
+    className="content-center list-video"
+    // width="30%"
+    // height="50%"
+  />
+      <h3 class="list-title">lesson3</h3>
+   </div>
+
+   
+
+  
+
+   
+
+   
+
+  
+
+   
+
+</div>
+
+</div>
+
+
+
+        </div>
                 </div>
                 :
                   <div className='text-center text-red-500 mt-5 text-4xl'>
