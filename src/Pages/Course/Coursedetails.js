@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import './Course.css';
 const Coursedetails = ({ tool }) => {
     const { _id, courseName, institutionName, courseDuration, courseDetails, coursePrice, image, code } = tool;
     return (
@@ -13,7 +13,7 @@ const Coursedetails = ({ tool }) => {
                 <p class=" font-bold text-secondary">Course Details :{courseDetails}</p>
                 <p class=" font-bold text-secondary">price :{coursePrice}</p>
                 <p class=" font-bold text-secondary">code : {code}</p>
-                <Link to={`/purchase/${_id}`} className="btn btn-accent" >Purchuse</Link>
+                <Link to={`/purchase/${_id}`} className="btn btn-success" >Purchuse</Link>
 
             </div>
         </div>

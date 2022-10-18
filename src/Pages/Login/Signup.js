@@ -1,9 +1,11 @@
 import React from 'react';
+import axios from 'axios';
+import  { useEffect } from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading/Loading'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate,useLocation } from 'react-router-dom';
 
 const Signup = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -20,6 +22,13 @@ const Signup = () => {
     const navigate = useNavigate();
 
     let signInError;
+    //email pass save work
+   
+
+           
+       
+        
+
 
     if (loading || gLoading || updating) {
         return <Loading></Loading>
@@ -36,8 +45,10 @@ const Signup = () => {
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
-        console.log('update done');
-        navigate('/allcourse');
+   
+        navigate('/login');
+     
+       
     }
     return (
         <div className='flex h-screen justify-center items-center'>

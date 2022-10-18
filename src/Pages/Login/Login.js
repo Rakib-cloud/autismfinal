@@ -21,7 +21,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
-
+ 
 
 
     useEffect(() => {
@@ -42,22 +42,31 @@ const Login = () => {
 
                 });
         };
+         
+        if (user) {
+            // console.log("🚀 ~ file: Login.js ~ line 47 ~ useEffect ~ user",);
+            // axios.get(`http://localhost:5000/users/${user.email}`)
+            //     .then(res => {
+            //         console.log(res);
+            //         if (res.data.email === user.email) return;
+            //         const data = {
+            //             email: user.email,
+            //             courses: []
+            //         };
+            //         saveData('PUT', data);
+            //     });
 
-        // if (user) {
-        //     console.log("🚀 ~ file: Login.js ~ line 47 ~ useEffect ~ user", user);
-        //     axios.get(`http://localhost:5000/users/${user.user.email}`)
-        //         .then(res => {
-        //             console.log(res);
-        //             // if (!res.data.user.user.email) {
-        //             //     saveData('POST', data);
-        //             // }
-        //             // return;
-        //         });
+            const data = {
+                email: user.user.email,
+                courses: []
+            };
+            saveData('PUT', data);
 
-        // }
+        }
 
         if (gUser) {
             console.log("🚀 ~ file: Login.js ~ line 54 ~ useEffect ~ gUser", gUser.user.email);
+
 
             axios.get(`http://localhost:5000/users/${gUser.user.email}`)
                 .then(res => {
@@ -75,6 +84,10 @@ const Login = () => {
 
     }, [user, gUser, navigate, from]);
 
+    //work for email pass ueser 
+
+    
+
     if (loading || gLoading) {
         return <Loading></Loading>;
     }
@@ -84,7 +97,14 @@ const Login = () => {
     }
 
     const onSubmit = data => {
+        
+        
+         
+        // console.log(email);
         signInWithEmailAndPassword(data.email, data.password);
+       
+        navigate('/allcourse');
+
     };
 
     return (
@@ -102,6 +122,7 @@ const Login = () => {
                                 </label>
                                 <input
                                     type="email"
+                                   
                                     placeholder="Your Email"
                                     className="input input-bordered w-full max-w-xs"
                                     {...register("email", {
@@ -146,7 +167,10 @@ const Login = () => {
                             </div>
 
                             {signInError}
-                            <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
+                            <input className='btn w-full max-w-xs text-white' type="submit" to="/" value="Login" >
+                              
+
+                            </input>
                         </form>
                         <p><small>New to Autism care <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
                         <div className="divider">OR</div>

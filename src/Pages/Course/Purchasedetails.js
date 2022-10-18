@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
-import Video from '../Videoplaylist/Video';
+
 
 const Purchasedetails = () => {
   const { _id } = useParams();
@@ -54,6 +54,7 @@ const Purchasedetails = () => {
                   <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                   <h3 className="text-lg font-bold text-green-500">You Have Successfully Purchased The Course</h3>
                   <p className="py-4">Enjoy Your Content</p>
+                  
                 </div>
               </div></> : <>
               <label htmlFor="my-modal-3" className="btn modal-button">open modal</label>
@@ -67,8 +68,8 @@ const Purchasedetails = () => {
               </div>
             </>
           }
-
-
+         
+          
 
 
         </div>
@@ -76,7 +77,18 @@ const Purchasedetails = () => {
 
       </div>
       <div>
-        <Video></Video>
+        {/* adding conent  */}
+                   {
+                    purchased ? <div className='mt-5 text-center'>
+                    <p>Course quiz link: {product.drive}</p>
+                    <p>Course ppt link: {product.ppt}</p>
+                    <p>Course video : {product.video}</p>
+                </div>
+                :
+                  <div>
+                        <p>Please follow Instruction for buying a course</p>
+                  </div>
+                   }
       </div>
     </div>
   );
