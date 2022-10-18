@@ -47,7 +47,7 @@ const Purchasedetails = () => {
           <p>course code: <span className='text-red-600'>{product.code}</span></p>
 
           {
-            purchased ? <><label htmlFor="my-modal-3" className="btn modal-button">open modal</label>
+            purchased ? <><label htmlFor="my-modal-3" className="btn modal-button">Buy Course</label>
               <input type="checkbox" id="my-modal-3" className="modal-toggle" />
               <div className="modal">
                 <div className="modal-box relative">
@@ -57,13 +57,13 @@ const Purchasedetails = () => {
                   
                 </div>
               </div></> : <>
-              <label htmlFor="my-modal-3" className="btn modal-button">open modal</label>
+              <label htmlFor="my-modal-3" className="btn modal-button">Buy Now</label>
               <input type="checkbox" id="my-modal-3" className="modal-toggle" />
               <div className="modal">
                 <div className="modal-box relative">
                   <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                   <h3 className="text-lg font-bold">Buy The Course</h3>
-                  <p className="py-4">Please Contact to the publisher with number +8801777777777</p>
+                  <p className="py-4">Please contact at 01710005671 and pay your course fee first.</p>
                 </div>
               </div>
             </>
@@ -79,13 +79,14 @@ const Purchasedetails = () => {
       <div>
         {/* adding conent  */}
                    {
-                    purchased ? <div className='mt-5 text-center'>
-                    <p>Course quiz link: {product.drive}</p>
+                    purchased ? <div className='mt-5 text-center text-green-900 '>
+                      
+                    <p>Course quiz link: {product.drive} </p>
                     <p>Course ppt link: {product.ppt}</p>
                     <p>Course video : {product.video}</p>
                 </div>
                 :
-                  <div>
+                  <div className='text-center text-red-500 mt-5 text-4xl'>
                         <p>Please follow Instruction for buying a course</p>
                   </div>
                    }

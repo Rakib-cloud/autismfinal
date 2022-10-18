@@ -4,6 +4,7 @@ import people1 from '../../people1.png'
 import people2 from '../../people2.png'
 import people3 from '../../people3.png'
 import Review from './Review';
+import './Test.css';
 const Testimonial = () => {
     const reviews = [
         {
@@ -32,8 +33,8 @@ const Testimonial = () => {
         <section className='my-28 mt-8'>
             <div className='flex justify-between'>
                 <div>
-                    <h4 className="text-xl text-primary font-bold ">Testimonials</h4>
-                    <h2 className='text-3xl'>What our Patients say</h2>
+                    <h4 className="text-xl text-primary font-bold text-center  mar">Testimonials</h4>
+                    <h2 className='text-3xl text-center mar '>What our Patients say</h2>
                 </div>
                 <div>
                     <img src={quote} className="w-24 lg:w-48" alt="" />
