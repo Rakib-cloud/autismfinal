@@ -57,9 +57,9 @@ videoList.forEach(vid =>{
         <div class="card-body items-center text-center">
           <h2 class="card-title">Course Name:{product.courseName}</h2>
           <p>Institution Name:{product.institutionName}</p>
-          <p>Course Duration:{product.courseDuration}</p>
+          <p>Course Duration:{product.courseDuration}<span>Months</span></p>
           <p>Coursedetails:{product.courseDetails}</p>
-          <p>course price:{product.coursePrice}</p>
+          <p>course price :{product.coursePrice} <span>BDT </span></p>
           <p>course code: <span className='text-red-600'>{product.code}</span></p>
 
           {

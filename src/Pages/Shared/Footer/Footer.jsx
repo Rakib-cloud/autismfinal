@@ -11,7 +11,7 @@ const Footer = () => {
           <div className='box logo'>
             <h1>Autism Care</h1>
             <span>ONLINE EDUCATION & LEARNING</span>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            <p>We provide parents with appropriate guidelines, knowledge, information, training and consultation about caring for special needs children.</p>
 
             <i className='fab fa-facebook-f icon'></i>
             <i className='fab fa-twitter icon'></i>

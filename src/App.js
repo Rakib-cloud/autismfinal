@@ -12,6 +12,8 @@ import Signup from './Pages/Login/Signup';
 import RequireAuth from './Pages/Login/RequireAuth';
 import Purchasedetails from './Pages/Course/Purchasedetails';
 import Comments from './comments/Comments';
+import Conference from './Pages/Conference/Conference';
+
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
         <Route path="blog" element={<Blog></Blog>} />
         <Route path="forum" element={<Comments commentsUrl="http://localhost:3004/comments"
         currentUserId="1"></Comments>} />
+        <Route path="conference" element={<Conference></Conference>} />
+
         <Route path="contact" element={<Contact></Contact>} />
        
         <Route path="login" element={<Login></Login>} />

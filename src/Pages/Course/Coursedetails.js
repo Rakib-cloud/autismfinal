@@ -9,9 +9,9 @@ const Coursedetails = ({ tool }) => {
                 <p class=" font-bold text-secondary">Course Name:{courseName}</p>
                 <img src={image} alt="" />
                 <p class=" font-bold text-secondary">Instituion Name:{institutionName}</p>
-                <p class=" font-bold text-secondary">Course Duration:{courseDuration}</p>
+                <p class=" font-bold text-secondary">Course Duration:{courseDuration}<span>Months</span></p>
                 <p class=" font-bold text-secondary">Course Details :{courseDetails}</p>
-                <p class=" font-bold text-secondary">price :{coursePrice}</p>
+                <p class=" font-bold text-secondary">price :{coursePrice} <span>BDT</span></p>
                 <p class=" font-bold text-secondary">code : {code}</p>
                 <Link to={`/purchase/${_id}`} className="btn btn-success" >Purchuse</Link>
 
