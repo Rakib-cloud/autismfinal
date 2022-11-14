@@ -13,6 +13,7 @@ import RequireAuth from './Pages/Login/RequireAuth';
 import Purchasedetails from './Pages/Course/Purchasedetails';
 import Comments from './comments/Comments';
 import Conference from './Pages/Conference/Conference';
+import Footer from './Pages/Shared/Footer/Footer';
 
 
 
@@ -40,7 +41,7 @@ function App() {
         <Route path="login" element={<Login></Login>} />
         <Route path="signup" element={<Signup></Signup>} />
       </Routes>
-      
+      <Footer></Footer>
     </div>
   );
 }
